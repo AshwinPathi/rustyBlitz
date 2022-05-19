@@ -1,0 +1,4 @@
+dist/
+build/
+settings.json
+cache.json

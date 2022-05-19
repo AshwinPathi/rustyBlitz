@@ -98,3 +98,5 @@ def load_rune_data(rune_data_file_name="/rune_data.json"):
 RUNE_CACHE = cache.Cache(path=data_directory+"/cache.json")
 CHAMP_DATA = load_champ_data()
 RUNE_DATA = load_rune_data()
+ROLES = ["top", "jungle", "mid", "bot", "support", "aram"]
+BACKENDS = ["u.gg", "op.gg"]

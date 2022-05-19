@@ -1,22 +1,22 @@
-# How to use
+# QT Gui based blitz.gg clone
 
-## Manual mode (requires client to be open)
+## How to build the exe
 
+**Pyinstaller must be run through a windows command prompt and not through WSL. First set up a python environment in windows, install the requirements, and then run the rest of the readme.**
+
+First:
 ```
-$ python3 rustyBlitz.py -c {champion_name} -r {role}
-```
-
-The argparse help should give the rest of the information
-
-
-## Debug manual mode (does not require client to be open)
-
-Use `--dryrun` to allow the scraper to be run without the client open. Use `--no-cache` to disable the caching mechanism
-
-Example:
-
-```
-$ python3 rustyBlitz.py -c {champion_name} -r {role} --dryrun --no-cache
+$pyi-makespec rustyBlitzGui.py
 ```
 
-This will just print out what runes you would populate without actually populating them
+Then change the `datas` directory in `rustyBlitzGui.spec` to map local files to files in use by the executable. Also modify the `console` variable in the `exe` section to be `False`.
+
+Then run:
+```
+pyinstaller rustyBlitzGui.spec
+```
+
+This will create a folder called `dist` which contains the exe. You can run the exe from there.
+
+## Output:
+![example](example.png?raw=true)
